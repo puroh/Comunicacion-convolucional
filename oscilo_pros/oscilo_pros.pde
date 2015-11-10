@@ -22,7 +22,7 @@ void draw()
     stroke(0,0,0);      //da el color(negro) a la cuadricula
     if(i<=20)
     {
-      text(40-i,25,15+i*27.5);    //genera los numeros de la linea vertical de 1 a 10
+      text(40-i,25,15+i*27.5);    //genera los numeros de la linea vertical de 20 a 40
     }
  
    
@@ -32,14 +32,12 @@ void draw()
   for(i=0;i<=32;i++) 
   {
     line(20+i*27.5,height-10,20+i*27.5,10);      //lineas verticales cada 27.5 px
-    //text(-17+i,-10+i*27.5,width/3,-10+i*27.5);   //muestra los numeros en el eje x
      
   }
   
   stroke(255,255,255);          //color del bordado el stroke no afecta los text
   noFill();                     //si no esta, la pantalla se pone mal...
   rect(20,10,width-40,height-20);        //da el efecto del bordeado blanco
-  //line(20,height/2,width-20,height/2);   //linea horizontal del eje x
   line(20,height-10,20,10);    //linea vertical del eje y
   String inString = puerto.readStringUntil('\n'); //lectura puerto serial
   
@@ -48,7 +46,7 @@ void draw()
     inString = trim(inString);     //limpia espacios en blanco
     float dato = float (inString); //String a Float
     println(dato);                 //Imprime datos en consola
-    dato= map(dato,20.5,40,37.5,height-37.5);   //Mapea los datos en un rango de pixeles 
+    dato= map(dato,20.7,40,37.5,height-37.5);   //Mapea los datos en un rango de pixeles 
     Y = int(height-dato);                    //Cambia la posicion de Y segun los datos
 
     if (X > width-20)       //Si la posicion en X llega al final vuelve a comenzar y le resta 20 para que no sobre pase el recuadro blanco 
