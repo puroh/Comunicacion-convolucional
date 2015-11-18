@@ -2,12 +2,12 @@
 
 uint8_t est_act;
 
-uint32_t codificar(uint8_t mensaje)
+uint32_t codificar(uint8_t mensaje) //Codifica el mensaje que ingresa al arduino, en este caso el sensor de temperatura.
 {
-    int i;
-    uint32_t mcod,mcodi=0;
-    est_act=0;
-    for(i=7;i>=0;i--)
+    int i; //Declaración de variable i para decremento del ciclo for.
+    uint32_t mcod,mcodi=0; //Declaración de variables.
+    est_act=0; //Declara una variable en cero.
+    for(i=7;i>=0;i--)  //Las siguientes líneas son para la codificación del mensaje mediante códigos convolucionales.
 	{
 		mcod= ((((mensaje)&(1<<i))>>i)<<3);
         mcod|= (((((mensaje)&(1<<i))>>i)^(est_act&1)^((est_act&(1<<1))>>1)^((est_act&(1<<2))>>2))<<2);
@@ -17,12 +17,12 @@ uint32_t codificar(uint8_t mensaje)
         est_act=est_act>>1;
         mcodi|= (mcod<<(4*i));
     }
-    return mcodi;
+    return mcodi; //Retorna el mensaje codificado y posteriormente ingresa a al arduino de recepción.
 }
 
-uint8_t decodificar(uint32_t mensajecod)
+uint8_t decodificar(uint32_t mensajecod) //Decodifica el mensaje que ingresa a el segundo arduino.
 {
-    int i;
+    int i; 
     uint8_t mess=0;
     est_act=0;
     for(i=7;i>=0;i--)
