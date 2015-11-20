@@ -11,12 +11,12 @@
   A0 entrada analoga del sensor
   
   LCD:
- * LCD RS pin to digital pin 31
- * LCD Enable pin to digital pin 35
- * LCD D4 pin to digital pin 39
- * LCD D5 pin to digital pin 43
- * LCD D6 pin to digital pin 47
- * LCD D7 pin to digital pin 51
+ * LCD RS pin to digital pin 51
+ * LCD Enable pin to digital pin 47
+ * LCD D4 pin to digital pin 43
+ * LCD D5 pin to digital pin 39
+ * LCD D6 pin to digital pin 35
+ * LCD D7 pin to digital pin 31
  * LCD R/W pin to tierra
  * VO --> 10K potenciometro:
  * vss --> tierra
@@ -27,7 +27,7 @@
 #include <LiquidCrystal.h>
 
 
-LiquidCrystal lcd(31, 35, 39, 43, 47 , 51);
+LiquidCrystal lcd(51, 47, 43, 39, 35 , 31);
  
 // the setup routine runs once when you press reset:
 void setup() {
