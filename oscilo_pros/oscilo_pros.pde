@@ -1,7 +1,7 @@
 import processing.serial.*;  // EMPIEZA CONEXION ARDUINO
 
 Serial puerto;          // 
-int X, Y, Xu, Yu, i;    // Decalaracion de variables
+int X, Y, Xu, Yu, i;    //   Decalaracion de variables
 
 void setup()
 {
