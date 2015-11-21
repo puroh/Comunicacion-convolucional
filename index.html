@@ -1,9 +1,667 @@
-Documentacion
+<html>
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<title>Proyecto de Micros</title>
+<style>
+div.inicio {
+    background-color:white;
+    color:black;
+    margin:30px;
+    padding:30px;
+} 
+</style>
+</head>
+<body background="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\fondo.jpg">
+<img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\uni.jpg" width="104" height="142">
+</br>
+<div style="color:white;font-size:20px;">
+<script type="text/javascript">
+var d = new Date();
+var d=new Date();
+var dia=new Array(7);
+dia[0]="Domingo";
+dia[1]="Lunes";
+dia[2]="Martes";
+dia[3]="Miercoles";
+dia[4]="Jueves";
+dia[5]="Viernes";
+dia[6]="Sabado";
 
-<body>/
-Diego jaramillo
-El brayan 
-mauro
+var mm=new Date();
+var m2 = mm.getMonth() + 1;
+var mesok = (m2 < 10) ? '0' + m2 : m2;
+var mesok=new Array(12);
+mesok[0]="Enero";
+mesok[1]="Febrero";
+mesok[2]="Marzo";
+mesok[3]="Abril";
+mesok[4]="Mayo";
+mesok[5]="Junio";
+mesok[6]="Julio";
+mesok[7]="Agosto";
+mesok[8]="Septiembre";
+mesok[9]="Octubre";
+mesok[10]="Noviembre";
+mesok[11]="Diciembre";
+
+document.write('A&ntildeo: '+d.getFullYear(),'<br>Mes: '+ mesok[mm.getMonth()],'<br>D&iacutea: '+ dia[d.getDay()],'</br>Fecha: '+d.getDate());
+
+</script>
+</div>
+<h1 style="text-align:center">UNIVERSIDAD DEL QUIND&IacuteO, FACULTA DE INGENIER&IacuteA 
+</h1>
+<h1 style="text-align:center">COMUNICACI&OacuteN ENTRE DOS DISPOSITIVOS USANDO COD/DEC CONVOLUCIONAL
+</h1>
+</br>
+<h1 style="text-align:center">Est. Diego Jaramilla, Mauricio Casta&ntildeo, Bryan Villa</h1>
+
+<br/><br/><br/><br/><br/>
+<div class="inicio">
+<font face=""><font color=""><h2>INTRODUCCI&OacuteN:</h2></font></font> 
+<p align="justify">Para este trabajo se elabora una peque&ntildea introducci&oacuten a los c&oacutedigos convolucionales, los cuales corresponden a 
+c&oacutedigos correctores de errores diferente a los c&oacutedigos de bloques. La principal diferencia entre
+ellos es el concepto de memoria, esto es, la codificaci&oacuten en un momento dado, la cual
+no depender&aacute solo de la palabra a codificar, sino tambi&eacuten de las codificadas anteriormente. Entre sus principales aplicaciones se necuentran las comunicaciones 
+inal&aacutembricas o comunicaciones con sat&eacutelites.
+Los c&oacutedigos convolucionales son un campo de trabajo abierto dentro de la teor&iacutea de c&oacutedigos y
+actualmente se pueden encontrar desde distintos enfoques y definiciones. </p>
+</br>
+<h2>OBJETIVOS:</h2>
+<ul style="list-style-type:circle">
+  <li><p>Desarrollar un proyecto final el cual cuente con bases de microprocesadores y se relacione con alguna profundizaci&oacuten del programa.</p></li>
+  <li><p>Realizar la implentaci&oacuten en el software de Arduino.</p></li>
+  <li><p>Hacer uso de los conocimientos de programaci&oacuten para la implemnetaci&oacuten en Arduino.</p></li>
+</ul>
+</br>
+<h2 style="text-align:center">TABLA DE CONTENIDOS</h2>
+<ul style="list-style-type:circle">
+  <li><p>Marco te&oacuterico.</p></li>
+  <li><p>Materiales</p></li>
+  <li><p>Montaje</p></li>
+  <li><p>Procedimiento</p></li>
+  <li><p>C&oacutedigos</p></li>
+  <li><p>Videos</p></li>
+  <li><p>Referencias</p></li>
+</ul>
+</br>
+<h2 style="text-align:center">MARCO TE&OacuteRICO</h2>
+<h2>1. Arduino</h2>
+<p align="justify">Arduino es una plataforma de hardware libre, basada en una placa con un microcontrolador y un entorno de desarrollo, dise&ntildeada para facilitar el uso de la electr&oacutenica en proyectos multidisciplinares.
+</br></br>
+El hardware consiste en una placa con un microcontrolador Atmel AVR y puertos de entrada/salida. Los microcontroladores m&aacutes usados son el Atmega168, Atmega328, Atmega1280, y Atmega8 por su sencillez y bajo coste que permiten el desarrollo de m&uacuteltiples dise&ntildeos. Por otro lado el software consiste en un entorno de desarrollo que implementa el lenguaje de programaci&oacuten Processing/Wiring y el cargador de arranque que es ejecutado en la placa. Se programa en el ordenador para que la placa controle los componentes electr&oacutenicos.</p>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod18.jpg"></div>
+<h2>2. Processing</h2>
+<p align="justify">Es una herramienta de idioma / desarrollo de c&oacutedigo abierto para la escritura de programas en otros ordenadores. &uacutetil cuando se quiere esos otros ordenadores a "hablar" con un Arduino, por ejemplo para visualizar o guardar algunos datos recogidos por el Arduino.</p>
+<h2>3. C&oacutedigo Convolucional</h2>
+<p align="justify">Los c&oacutedigos convolucionales son c&oacutedigos lineales al igual que los c&oacutedigos bloque (como los c&oacutedigos de Hamming, por ejemplo) y, por tanto, se utilizan para proteger la informaci&oacuten a&ntildeadiendo redundancia a la misma, de manera que las palabras del c&oacutedigo tengan la distancia m&iacutenima necesaria.
+Sin embargo, a diferencia de los c&oacutedigos bloque, las palabras de un c&oacutedigo convolucional se generan no s&oacutelo a partir de los d&iacutegitos de informaci&oacuten actuales sino tambi&eacuten con la informaci&oacuten anterior en el tiempo. Es decir, un codificador convolucional es un sistema con memoria y, en consecuencia, lleva asociada una cadena de Markov aunque &eacutesta no es visible en la salida pero s&iacute la condiciona.</p>
+<p align="justify">En teor&iacutea de la informaci&oacuten, un c&oacutedigo convolucional es un tipo de c&oacutedigo de detecci&oacuten de errores donde:</p>
+<ol type="1">
+  <li>Cada s&iacutembolo de m bits de informaci&oacuten se transforma, al ser codificado, en un s&iacutembolo de n bits, donde m/n es la tasa del c&oacutedigo. </li>
+  <li>La transformaci&oacuten es funci&oacuten de los k s&iacutembolos anteriores, donde k es la longitud del c&oacutedigo. </li>
+</ol>
+<p align="justify">Los c&oacutedigos convolucionales son c&oacutedigos lineales al igual que los c&oacutedigos bloque (como los c&oacutedigos de Hamming, por ejemplo) y, por tanto, se utilizan para proteger la informaci&oacuten a&ntildeadiendo redundancia a la misma, de manera que las palabras del c&oacutedigo tengan la distancia m&iacutenima necesaria.
+</br>
+</br>
+Sin embargo, a diferencia de los c&oacutedigos bloque, las palabras de un c&oacutedigo convolucional se generan no s&oacutelo a partir de los d&iacutegitos de informaci&oacuten actuales sino tambi&eacuten con la informaci&oacuten anterior en el tiempo. Es decir, un codificador convolucional es un sistema con memoria y, en consecuencia, lleva asociada una cadena de Markov aunque &eacutesta no es visible en la salida pero s&iacute la condiciona.</p>
+<h2>3.1 Codificaci&oacuten </h2>
+<p align="justify"> Existen varios m&eacutetodos de codificaci&oacuten de c&oacutedigos convolucionales, aunque una de la m&aacutes usuales es la basada en registros de desplazamiento conectados con sumadores base 2 en los que se realiza la codificaci&oacuten. Por cada bit que entre en el codificador se obtienen n bits. </p>
+<p align="justify">La realizaci&oacuten f&iacutesica de un codificador puede realizarse mediante circuitos secuenciales lineales.
+Se pueden utilizar L registros cuyas salidas se suman de forma que se obtiene una palabra
+del c&oacutedigo para cada entrada. Con la entrada de una nueva palabra a codificar las anteriores se
+desplazan al siguiente registro y se obtiene una nueva palabra codificada. </p>
+<p align="justify">En las transmisiones digitales actuales la codificaci&oacuten es un proceso muy elaborado, con un diagrama de bloques general que mostramos en la siguiente figura. </p>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod.jpg"></div>
+<p align="justify">Este sistema contiene dos codificadores propiamente dichos: uno exterior de bloques, y uno interior convolucional. Estos dos codificadores introducen redundancia en los datos con objeto de poder detectar o corregir errores de transmisi&oacuten. El sistema contiene adem&aacutes dos entrelazados cuyo objetivo es hacer que bloques correlativos de bits no se transmitan juntos. Este es el esquema de codificaci&oacuten empleado en la televisi&oacuten digital DVB (Digital Video Bradcasting). El esquema de codificaci&oacuten utilizado en la telefon&iacutea m&oacutevil GSM es similar, pues usa un codificador de bloques, un codificador convolucional y un entrelazado. 
+</br></br>Los c&oacutedigos convolucionales son adecuados para usar sobre canales con mucho ruido (alta probabilidad de error).
+</br></br>Los c&oacutedigos convolucionales son c&oacutedigos lineales, donde la suma de dos palabras de c&oacutedigo cualesquiera tambi&eacuten es una palabra de c&oacutedigo. Y al contrario que con los c&oacutedigos lineales, se prefieren los c&oacutedigos no sistem&aacuteticos.
+</br></br>El sistema tiene memoria: la codificaci&oacuten actual depende de los datos que se env&iacutean ahora y que se enviaron en el pasado.
+</br></br>Un c&oacutedigo convolucional queda especificado por tres par&aacutemetros (n,k,m), para la muestra del proceso de codificaci&oacuten:</p>
+<p align="center"><b>n</b> es el n&uacutemero de bits de la palabra codificada. </p>
+<p align="center"><b>k</b> es el n&uacutemero de bits de la palabra de datos. </p>
+<p align="center"><b>m</b> es la memoria del c&oacutedigo o longitud restringida. </p>
+<p align="justify">La codificaci&oacuten convolucional es una codificaci&oacuten continua en la que la secuencia de bits codificada depende de los bits previos. El codificador consta de un registro de desplazamiento de K segmentos de longitud k (en total kK) que se desplaza k posiciones por ciclo y genera n funciones EXOR tambi&eacuten por ciclo. La tasa de codificaci&oacuten es, entonces, R=k/n. 
+</br></br>En el siguiente ejemplo mostramos un registro que se desplaza una posici&oacuten por ciclo (k=1), que consta de Kk=3 celdas y que genera N=3 funciones EXOR por ciclo. </p>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod1.jpg"></div>
+<h2>3.1.1 Proceso de Codificaci&oacuten </h2>
+<p>Para este proceso se tendr&aacute en cuenta unos ejemplos, solo con el fin de dar a conocer la teor&iacutea del funcionamiento del codificador. </p>
+<p>El proceso de codificaci&oacuten de estos c&oacutedigos se realiza utilizando un dispositivo l&oacutegico en el codificador.</p>
+<p>Codificador convolucional (4,3,5). <div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod2.jpg"></div>
+<p> La palabra codificada se obtendr&aacute como el resultado de realizar una serie de operaciones l&oacutegicas entre determinados bits que est&aacuten almacenados en los registros intermedios.</p>
+<p>Codificador convolucional (2,1,3)</p>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod3.jpg"></div>
+<ul style="list-style-type:circle">
+  <li><p>El conmutador con las dos entradas hace el papel de un registro de desplazamiento de dos estados.</p></li>
+  <li><p>El c&oacutedigo convolucional es generado introduciendo un bit de datos y dando una revoluci&oacuten completa al conmutador. </p></li>
+  <li><p>Inicialmente se supone que los registros intermedios contienen ceros. </p></li>
+</ul>
+<p>En este ejemplo la palabra codificada se obtiene como resultado de sumas m&oacutedulo-2 entre los bits indicados que est&aacuten almacenados en los registros intermedios.
+supongamos que se quiere enviar la secuencia de bits 0101 (donde los bits m&aacutes a la derecha son los m&aacutes antiguos). El proceso de codficaci&oacuten es el siguiente: </p>
+<ul style="list-style-type:circle">
+  <li><p>Se introduce el primer bit de la secuencia en el codificador: </p></li>
+</ul>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod4.jpg"></div>
+<ul style="list-style-type:circle">
+  <li><p>Se introduce el segundo bit de la secuencia en el codificador: </p></li>
+</ul>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod5.jpg"></div>
+<ul style="list-style-type:circle">
+  <li><p>Se introduce el tercer bit de la secuencia en el codificador:  </p></li>
+</ul>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod6.jpg"></div>
+<ul style="list-style-type:circle">
+  <li><p>Se introduce el cuarto bit de la secuencia en el codificador:   </p></li>
+</ul>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod7.jpg"></div>
+<p align="justify"> Al final del proceso de codificaci&oacuten obtenemos que la secuencia codificada es 01 01 01 11.
+<p>Hay tres m&eacutetodos gr&aacuteficos:</p>
+<ul style="list-style-type:circle">
+  <li><p><b>Diagrama &aacuterbol o &aacuterbol del c&oacutedigo: </b>representaci&oacuten mediante un &aacuterbol binario de las distintas posibilidades. </p></li>
+  <li><p><b>Diagrama de estados: </b>es la forma menos utilizada. </p></li>
+  <li><p><b>Diagrama de Trellis o enrejado: </b>es la forma m&aacutes utilizada porque es la que permite realizar
+la decodificaci&oacuten de la forma m&aacutes sencilla. </p></li>
+</ul>
+<h2>3.2 Decodificaci&oacuten </h2>
+<p align="justify">La decodificaci&oacuten de un c&oacutedigo convolucional consiste en encontrar la secuencia de palabras del c&oacutedigo correspondiente
+a la secuencia recibida. Dado que puede producirse errores, se buscar&aacute la palabra m&aacutes
+probable. Existen diversos algoritmos que permiten la decodificaci&oacuten de este tipo de c&oacutedigos. </p>
+<h2>4. Transmisi&oacuten</h2>
+<p align="justify">En las telecomunicaciones, la transmisi&oacuten (abreviatura: Tx ) o emisi&oacuten es el proceso de env&iacuteo y propagaci&oacuten de una se&ntildeal de informaci&oacuten anal&oacutegica o digital sobre un medio de transmisi&oacuten f&iacutesico punto-a-punto o punto-a-multipunto, ya sea por cable, fibra &oacuteptica o inal&aacutembricamente. Las tecnolog&iacuteas y esquemas de transmisi&oacuten t&iacutepicamente se refieren a las funciones del protocolo de la capa f&iacutesica, tales como modulaci&oacuten, demodulaci&oacuten, codificaci&oacuten de l&iacutenea, ecualizaci&oacuten, control de errores, sincronizaci&oacuten de bits y de multiplexaci&oacuten, pero el t&eacutermino tambi&eacuten puede implicar funciones de protocolo de capa superior, por ejemplo, la digitalizaci&oacuten de una se&ntildeal de mensaje anal&oacutegica, y la codificaci&oacuten de fuentes (compresi&oacuten).</p>
+<h2>4.1 Transmisi&oacuten As&iacutencrona</h2>
+<p align="justify">La transmisi&oacuten as&iacutencrona tiene lugar cuando el proceso de sincronizaci&oacuten entre emisor y receptor se realiza en cada palabra de c&oacutedigo transmitido. Esta sincronizaci&oacuten se lleva a cabo a trav&eacutes de unos bits especiales que definen el entorno de cada c&oacutedigo.
+</br></br>
+Tambi&eacuten se dice que se establece una relaci&oacuten as&iacutencrona cuando no hay ninguna relaci&oacuten temporal entre la estaci&oacuten que transmite y la que recibe. Es decir, el ritmo de presentaci&oacuten de la informaci&oacuten al destino no tiene por qu&eacute coincidir con el ritmo de presentaci&oacuten de la informaci&oacuten por la fuente. En estas situaciones tampoco se necesita garantizar un ancho de banda determinado, suministrando solamente el que est&eacute en ese momento disponible. Es un tipo de relaci&oacuten t&iacutepica para la transmisi&oacuten de datos.
+</br></br>
+En este tipo de red el receptor no sabe con precisi&oacuten cuando recibir&aacute un mensaje. Cada caracter a ser transmitido es delimitado por un bit de informaci&oacuten denominado de cabecera o de arranque, y uno o dos bits denominados de terminaci&oacuten o de parada.
+</br></br>
+El bit de arranque tiene dos funciones de sincronizaci&oacuten de reloj del transmisor y del receptor.
+El bit o bits de parada, se usan para separar un caracter del siguiente.
+Despu&eacutes de la transmisi&oacuten de los bits de informaci&oacuten se suele agregar un bit de paridad (par o impar). Dicho Bit sirve para comprobar que los datos se transfieran sin interrupci&oacuten. El receptor revisa la paridad de cada unidad de entrada de datos.
+</br></br>
+Partiendo desde la l&iacutenea de transmisi&oacuten en reposo, cuando tiene el nivel l&oacutegico 1, el emisor informa al receptor de que va a llegar un car&aacutecter, para ello antepone un bit de arranque (Start) con el valor l&oacutegico 0. Una vez que el bit Start llega al receptor este disparar&aacute un reloj interno y se quedar&aacute esperando por los sucesivos bits que contendr&aacute la informaci&oacuten del car&aacutecter transmitido por el emisor.
+</br></br>
+Una vez que el receptor recibe todos los bits de informaci&oacuten se a&ntildeadir&aacute al menos un bit de parada (Stop) de nivel l&oacutegico 1, que repondr&aacuten en su estado inicial a la l&iacutenea de datos, dej&aacutendola as&iacute preparada para la siguiente transmisi&oacuten del siguiente car&aacutecter. Es usada en velocidades de modulaci&oacuten de hasta 1,200 baudios. El rendimiento se basa en el uso de un bit de arranque y dos de parada, en una se&ntildeal que use c&oacutedigo de 7 bits m&aacutes uno de paridad (8 bits sobre 11 transmitidos) es del 72 por 100.</p>
+<h2>4.1.1 Ventajas y desventajas del modo as&iacutencrono:</h2>
+<ul style="list-style-type:circle">
+  <li><p>En caso de errores se pierde siempre una cantidad peque&ntildea de caracteres, pues &eacutestos se sincronizan y se transmiten de uno en uno. </p></li>
+  <li><p>Bajo rendimiento de transmisi&oacuten, dada la proporci&oacuten de bits &uacutetiles y de bits de sincronismo, que hay que transmitir por cada car&aacutecter.</p></li>
+  <li><p>Es un procedimiento que permite el uso de equipamiento m&aacutes econ&oacutemico y de tecnolog&iacutea menos sofisticada.</p></li>
+  <li><p>Se adecua m&aacutes f&aacutecilmente en aplicaciones, donde el flujo transmitido es m&aacutes irregular.</p></li>
+  <li><p>Son especialmente aptos, cuando no se necesitan lograr altas velocidades.</p></li>
+</ul>
+<h2>4.2 Transmisi&oacuten S&iacutencrona</h2>
+<p align="justify">La transmisi&oacuten s&iacutencrona es una t&eacutecnica que consiste en el env&iacuteo de una trama de datos (conjunto de caracteres) que configura un bloque de informaci&oacuten comenzando con un conjunto de bits de sincronismo (SYN) y terminando con otro conjunto de bits de final de bloque (ETB). En este caso, los bits de sincronismo tienen la funci&oacuten de sincronizar los relojes existentes tanto en el emisor como en el receptor, de tal forma que estos controlan la duraci&oacuten de cada bit y caracter.
+</br></br>
+Dicha transmisi&oacuten se realiza con un ritmo que se genera centralizadamente en la red y es el mismo para el emisor como para el receptor. La informaci&oacuten se transmite entre dos grupos, denominados delimitadores (8 bits).</p>
+<p align="justify">Los bloques a ser transmitidos tienen un tama&ntildeo que oscila entre 128 y 1,024 bytes. La se&ntildeal de sincronismo en el extremo fuente, puede ser generada por el equipo terminal de datos o por el m&oacutedem. Cuando se transmiten bloques de 1,024 bytes y se usan no m&aacutes de 10 bytes de cabecera y terminaci&oacuten, el rendimiento de transmisi&oacuten supera el 99 por 100.</P>
+<h2>4.2.1 Ventajas</h2>
+<ul style="list-style-type:circle">
+  <li><p>Posee un alto rendimiento en la transmisi&oacuten.</p></li>
+  <li><p>Son aptos para transmisiones de altas velocidades (iguales o mayores a 1,200 baudios de velocidad de modulaci&oacuten).</p></li>
+  <li><p>El flujo de datos es m&aacutes regular.</p></li>
+</ul>
+<h2>4.2.2 Desventajas</h2>
+<ul style="list-style-type:circle">
+  <li><p>Los equipamientos son de tecnolog&iacutea m&aacutes completa y de costos m&aacutes altos </p></li>
+</ul>
+<h2>5. LM35</h2>
+<p align="justify">La serie LM35 son dispositivos de temperatura de precisi&oacuten  integrado con una tensi&oacuten de salida linealmente proporcional a la temperatura cent&iacutegrada. El dispositivo LM35 tiene una ventaja sobre los sensores de temperatura lineal calibrada en grados Kelvin, ya que no se requiere el usuario para restar un voltaje constante grande de la salida para obtener conveniente escalado cent&iacutegrados.</p>
+<h2>5.1 Caracter&iacutesticas</h2>
+<ul style="list-style-type:circle">
+  <li><p>Calibrada directamente en grados Celsius ( cent&iacutegrados ).</p></li>
+  <li><p>Lineal + 10 m V / grados celsius Factor de Escala.</p></li>
+  <li><p>0.5 grados celsius asegurada Precisi&oacuten (a 25 grados celsius ).</p></li>
+  <li><p>Adecuado para aplicaciones remotas.</p></li>
+  <li><p>Bajo Costo Debido a la oblea Nivel Recorte.</p></li>
+  <li><p>Funciona con 4 V a 30 V.</p></li>
+</ul>
+<h2>5.2 Configuraci&oacuten de Pin</h2>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod8.jpg"></div>
+<h2>6. LCD</h2>
+<p align="justify">Si bien muchas aplicaciones donde debemos mostrar informaci&oacuten podemos
+resolverlas con display de 7 segmentos, estos presentas algunas
+limitaciones importantes, por ejemplo: no muestran caracteres
+alfanum&eacutericos ni ASCII, y tienen un elevado consumo de corriente
+(recordemos que estamos encendiendo LEDs).
+Los m&oacutedulos LCD (display de cristal l&iacutequido) solucionan estos
+inconvenientes y tienen algunas ventajas adicionales como la
+facilidad que con que se pueden conectar a microprocesadores y
+microcontroladores, sumado a la &oacuteptima presentaci&oacuten de la
+informaci&oacuten. </p>
+<h2>6.1 Pines LCD 2x16</h2>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod9.jpg"></div>
+<h2>6.2 Pines de alimentaci&oacuten</h2>
+<ul style="list-style-type:circle">
+  <li><p><b>VSS: </b>Pin para conectar la pantalla LCD a tierra (GND). </p></li>
+  <li><p><b>VDD: </b>Pin de alimentaci&oacuten principal pantalla LCD (5 Volts).</p></li>
+</ul>
+<h2>6.3 Regulaci&oacuten de contraste</h2>
+<ul style="list-style-type:circle">
+  <li><p align="justify"><b>V0: </b>Pin para regular contraste de la pantalla, se debe conectar al pin central de un potenci&oacutemetro de 10kohm, el cual a su vez debe estar conectado por medio de sus pines exteriores a la alimentaci&oacuten y tierra), de manera que al regular el potenci&oacutemetro se podr&aacute regular el contraste de la pantalla.</p></li>
+</ul>
+<h2>6.4 Pines de control</h2>
+<p>Estos pines deben ser conectados a pines digitales de la placa arduino.</p>
+<ul style="list-style-type:circle">
+<li><p align="justify"><b> RS: </b>Selector de registro, por medio de este pin la LCD le dice al microcontrolador si lo que se desea hacer es mostrar caracteres o enviar comandos de control (como cambiar la posici&oacuten del cursor o borrar la pantalla por ejemplo). Cuando RS esta en LOW recibe datos en modo comando y si esta en HIGH, los datos recibidos ser&aacuten de texto para mostrar en pantalla.</p></li>
+<li><p align="justify"><b>RW: </b>Pin de lectura o escritura, sirve para enviar datos al LCD o recibir datos de la LCD. Para enviar datos al LCD RW debe estar en LOW, para recibir datos de la LCD RW debe estar en HIGH; en nuestro caso conectaremos RW a tierra de manera que estar&aacute siempre en LOW.</p></li>
+<li><p align="justify"><b>E: </b>Enable, es el pin que habilita la pantalla para comenzar a recibir informaci&oacuten, sirve para advertir a la LCD que el microcontrolador va a enviar datos (pueden ser de control o informaci&oacuten).</p></li>
+</ul>
+<h2>6.5 Pines de informaci&oacuten</h2>
+<p align="justify">Estos pines se deben conectar a los pines digitales del arduino. Se usan para estableces lineas de comunicaci&oacuten en paralelo por donde se transfieren datos y comandos de control del arduino hacia la LCD. Hay que tomar en cuenta que una LCD de 8 bits puede funcionar perfectamente con solo 4 bits (cables de datos), pero funcionar&aacute con una menor velocidad.</p>
+<p align="justify">Los pines de datos D0, D1,D2 y D3 son opcionales, si se omiten en la programaci&oacuten del arduino solo se utilizar&aacuten D4, D5, D6 y D7.</p>
+<ul style="list-style-type:circle">
+  <li><p align="justify">D0, D1, D2, D3: no ser&aacuten utilizados para esta configuraci&oacuten de la pantalla, solo se utilizan cuando se trabaja con 8 bits (son opcionales).</p></li>
+  <li><p align="justify">D4, D5, D6, D7: Solo utilizaremos 4 bits para la comunicaci&oacuten entre la pantalla y el microcontrolador, por lo que usaremos los pines D4, D5, D6 y D7 (son obligatorios).</p></li>
+</ul>
+<h2>6.6 Pines para el circuito de luz de fondo</h2>
+<p align="justify">Como todo LED se le debe conectar una resistencia de 220 ohm para regular su corriente, no necesariamente tiene que ser una resistencia de ese valor puede ser menor,pero esto depender&aacute siempre de la corriente m&aacutexima que pueda aguantar el led. (Revisar Ley de Ohm).</p>
+<ul style="list-style-type:circle">
+  <li><p align="justify"><b>A:</b> pin de la luz del fondo de la pantalla (anodo), se conecta 4 o 5V.</p></li>
+  <li><p align="justify"><b>K: </b>pin de la luz del fondo de la pantalla (catodo), se conecta a GND.</p></li>
+</ul>
+<h2>6.7 Circuito Arduino - Pantalla LCD </h2>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod10.jpg"></div>
+<p align="justify">Lo primero que deben conectar son los cables azul, rojo y morado que se ven en la imagen, finalmente conectan los cables de color naranjo y con eso esta lista para la programaci&oacuten.</p>
+<p align="justify">Primero debemos conectar los pines de alimentaci&oacuten de la pantalla LCD para probar si la pantalla enciende correctamente.</p>
+<ul style="list-style-type:circle">
+  <li><p>VSS  ---->GND</p></li>
+  <li><p>VDD  ---->5V</p></li>
+  <li><p>A    ---->5V</p></li>
+  <li><p>K    ---->GND</p></li>
+</ul>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod11.jpg"></div>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod12.jpg"></div>
+<p align="justify">Ahora conectamos el circuito a los 5V del Arduino y tambi&eacuten el GND, si se enciende la pantalla entonces vamos bien.</p>
+<ul style="list-style-type:circle">
+  <li><p>5V (Arduino)----->protoboard (+)</p></li>
+  <li><p>GND (Arduino)-->protoboard  (-)</p></li>
+</ul>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod13.jpg"></div>
+<p align="justify">Seguido de esto regulamos el contraste de la pantalla por medio de un potenci&oacutemetro, de forma pr&aacutectica se har&aacute con un trimer. </p>
+<ul style="list-style-type:circle">
+  <li><p>Pin 1 potenciometro (izquierda) ---> 5V</p></li>
+  <li><p>Pin 2 potenciometro (centro)    ---> V0 (Pantalla LCD)</p></li>
+  <li><p>Pin 3 potenciometro (derecha)   ---> GND</p></li>
+</ul>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod14.jpg"></div>
+<p>Ahora conectamos los pines:</p>
+<ul style="list-style-type:circle">
+  <li><p>Pantalla LCD RS  --> Pin 7 Arduino</p></li>
+  <li><p>Pantalla LCD RW--> GND</p></li>
+  <li><p>Pantalla LCD E    --> Pin 8 Arduino</p></li>
+</ul>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod15.jpg"></div>
+<p>Finalmente resta conectar los pines de informaci&oacuten D4, D5, D6 y D7</p>
+<ul style="list-style-type:circle">
+  <li><p>D4-->Pin 9 Arduino</p></li>
+  <li><p>D5-->Pin 10 Arduino</p></li>
+  <li><p>D6-->Pin 11 Arduino</p></li>
+  <li><p>D7-->Pin 12 Arduino</p></li>
+</ul>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod16.jpg"></div>
+<h2>7. Protoboard</h2>
+<p align="justify">Es un tablero con orificios que se encuentran conectados el&eacutectricamente entre s&iacute de manera interna, habitualmente siguiendo patrones de l&iacuteneas, en el cual se pueden insertar componentes electr&oacutenicos y cables para el armado y prototipado de circuitos electr&oacutenicos y sistemas similares. Est&aacute hecho de dos materiales, un aislante, generalmente un pl&aacutestico, y un conductor que conecta los diversos orificios entre s&iacute. Uno de sus usos principales es la creaci&oacuten y comprobaci&oacuten de prototipos de circuitos electr&oacutenicos antes de llegar a la impresi&oacuten mec&aacutenica del circuito en sistemas de producci&oacuten comercial.</p>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod17.jpg"></div>
+<h2 style="text-align:center">MATERIALES</h2>
+<ul style="list-style-type:circle">
+  <li><p>Arduino Mega</p></li>
+  <li><p>LCD</p></li>
+  <li><p>LM35</p></li>
+  <li><p>Protoboard</p></li>
+  <li><p>Software Processing</p></li>
+</ul>
+<h2 style="text-align:center">MONTAJE</h2>
+<p>Diagrama del proyecto:</p>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod19.jpg"></div>
+<p>Implementaci&oacuten de diagrama del proyecto:</p>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod20.jpg"></div>
+<h2 style="text-align:center">PROCEDIMIENTO</h2>
+<p>Del siguiente esquema se obtiene el proceso para la codificaci&oacuten.</p>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod22.jpg"></div>
+<p align="justify">De la gr&aacutefica anterior se realizar el proceso interno de la OR de donde se obtiene la codificaci&oacuten y la decodificaci&oacuten.</p>
+<div align="center"><img src="C:\Users\Bryan\Documents\GitHub\Comunicacion-convolucional\images\cod21.jpg"></div>
+<h2 style="text-align:center">C&OacuteDIGOS</h2>
+<p><b>C&oacutedigo de Codificaci&oacuten y Decodificaci&oacuten mediante la Convoluci&oacuten:</b></p>
+</br>
+#include "comunicacion.h"
+</br>
+#include <stdint.h>
+</br>
+uint32_t comunicacion::codificar(uint8_t mensaje)
+</br>
+{
+     </br>   
+        est_act=0;
+</br>
+    for(i=7;i>=0;i--)</br>{
+</br>
+        mcod= ((((mensaje)&(1<<i))>>i)<<3);
+</br>
+        mcod|= (((((mensaje)&(1<<i))>>i)^(est_act&1)^((est_act&(1<<1))>>1)^((est_act&(1<<2))>>2))<<2);
+</br>
+        mcod|=   ((((mensaje)&(1<<i))>>i)^((est_act&(1<<1))>>1))<<1;
+</br>
+        mcod|=  ((est_act&1)^((est_act&(1<<1))>>1)^((est_act&(1<<2))>>2));
+</br>
+        est_act= est_act | ((((mensaje)&(1<<i))>>i)<<3);
+</br>
+        est_act=est_act>>1;
+     </br>   
+        //Serial.print("mensaje de 4 bits: ");
+		</br>
+        //Serial.println(mcod);
+        </br>
+        mcodi|= (mcod<<(4*i));
+		</br>
+        }
+</br>
+        return mcodi;</br>
+}
+</br>
+uint8_t  comunicacion::decodificar(uint32_t mensajecod)</br>
+{</br>
+        uint8_t mess=0;
+      </br>  
+        est_act=0;
+        </br>
+        for(i=7;i>=0;i--){
+</br>
+        if(est_act==0)</br>{</br>
+            if(((mensajecod<<(7-i)*4)>>(28))==14)</br>{</br>
+                mess|=1<<i;est_act=4;</br>}</br>
+            else</br>
+                est_act=0;
+</br>
+        }</br>
 
 
-/
+        if(est_act==1)</br>{</br>
+            if(((mensajecod<<(7-i)*4)>>(28))==11)</br>{</br>
+                mess|=1<<i;est_act=4;</br>}</br>
+            else if(((mensajecod<<(7-i)*4)>>(28))==5)</br>
+                est_act=0;
+</br>
+        }</br>
+
+                if(est_act==2)</br>{</br>
+            if(((mensajecod<<(7-i)*4)>>(28))==9)</br>{</br>
+                mess|=1<<i;est_act=5;</br>}</br>
+             else if(((mensajecod<<(7-i)*4)>>(28))==7)</br>
+                est_act=1;</br>
+
+        }
+</br>
+
+                if(est_act==3)</br>{</br>
+            if(((mensajecod<<(7-i)*4)>>(28))==12)</br>{</br>
+                mess|=1<<i;est_act=5;</br>}</br>
+            else if(((mensajecod<<(7-i)*4)>>(28))==2)</br>
+                est_act=1;</br>
+
+        }</br>
+
+              if(est_act==4)</br>{</br>
+            if(((mensajecod<<(7-i)*4)>>(28))==11)</br>{</br>
+                mess|=1<<i;est_act=6;</br>}</br>
+            else if(((mensajecod<<(7-i)*4)>>(28))==5)</br>
+                est_act=2;</br>
+
+        }
+</br>
+                if(est_act==5)</br>{</br>
+            if(((mensajecod<<(7-i)*4)>>(28))==14)</br>{</br>
+                mess|=1<<i;est_act=6;</br>}</br>
+            else if(((mensajecod<<(7-i)*4)>>(28))==1)</br>
+                est_act=2;</br>
+
+        }
+</br>
+               if(est_act==6)</br>{</br>
+            if(((mensajecod<<(7-i)*4)>>(28))==12)</br>{</br>
+                mess|=1<<i;</br>
+                est_act=7;</br>
+                    }</br>
+            else if(((mensajecod<<(7-i)*4)>>(28))==2)</br>
+                est_act=3;</br>
+
+        }
+</br>
+                if(est_act==7)</br>{</br>
+            if(((mensajecod<<(7-i)*4)>>(28))==9)</br>{</br>
+                mess|=1<<i;est_act=7;</br>}</br>
+            else if(((mensajecod<<(7-i)*4)>>(28))==7)</br>
+                est_act=3;</br>
+
+        }
+</br>
+
+
+        }
+</br>
+        return mess;
+</br>
+}
+</br>
+comunicacion::~comunicacion()</br>
+{</br>
+	//destructor por defecto</br>
+}</br>
+<p><b>C&oacutedigo del Transmisor:</p></b>
+</br>
+#include "comunicacion.h"</br>
+#include <avr/io.h></br>
+#include <avr/interrupt.h></br>
+
+
+int estado=1;</br>
+int Salida=12;</br>
+int i=0,j=0,m=0,n=0,p=0;</br>
+uint32_t codificado;</br>
+
+comunicacion x;</br>
+
+void setup()</br> {</br>
+  Serial.begin(9600);</br>
+  pinMode(Salida,OUTPUT);</br>
+  pinMode(A0,INPUT);</br>
+  cli();</br>
+  TCCR1A=0;</br>
+  TCCR1B=0;</br>
+  OCR1A=4999;//Para 20ms</br>
+  TCCR1B|=(1<<WGM12);</br>
+  TCCR1B|=(1<<CS11);</br>
+  TCCR1B|=(1<<CS10);</br>
+  TIMSK1|=(1<<OCIE1A);</br>
+  sei();</br>
+}
+</br>
+void loop()</br>{</br>
+  
+  if (p!=1)</br>{</br>
+  int sensorValue = analogRead(A0);</br>
+  // corvierte la lectura analoga (con una lectura analoga de 0 - 1023) a el valor de la temperatura en grados celcius:</br>
+  uint8_t temp = (100.0 * sensorValue * 4.84) / 1023;</br>
+  Serial.println(temp-1,BIN);</br>
+  codificado=x.codificar(temp-1);</br>
+    p=1;  </br>
+    }</br>
+  </br>
+}
+</br>
+  ISR(TIMER1_COMPA_vect)</br>{</br>
+        if(i!=600)</br>{</br>
+            digitalWrite(Salida,estado);</br>
+            i++;</br>
+            if((i==600)&(j!=1)){estado=!estado;i=599;j=1;</br>}</br>
+        }</br>
+        else</br>{</br>
+            if(n!=1)</br>{</br>
+                digitalWrite(Salida,((codificado>>m)&1));</br>
+                Serial.print("Dato enviado\n");</br>
+                Serial.println(m);</br>
+                Serial.println((codificado>>m)&1);</br>
+                m++;</br>
+                if((m==32)&(n!=1)){n=1;</br>}</br>  
+            }</br>
+            else</br>{</br>
+                  i=0;j=0;m=0;n=0;</br>
+                  estado=1;</br>
+                  p=0;</br>
+            }</br>
+      </br>
+        }
+           </br> 
+}
+</br>
+<p><b>C&oacutedigo del Receptor:</p></b>
+</br>
+#include <avr/io.h></br>
+#include <avr/interrupt.h></br>
+#include <stdint.h></br>
+#include <LiquidCrystal.h></br>
+#include "comunicacion.h"</br>
+
+LiquidCrystal lcd(31, 35, 39, 43, 47 , 51);</br>
+int actual=1,anterior=1,i=0,parimpar=0,n=0;</br>
+int Entrada=8;</br>
+int bin;</br>
+uint16_t dato1=0,dato2=0;</br>
+uint32_t total=0x00000000;</br>
+uint8_t decodificado;</br>
+
+comunicacion x;</br>
+
+void setup() </br>{</br>
+  pinMode(Entrada,INPUT);</br>
+  Serial.begin(9600);</br>
+  lcd.begin(16, 2);</br>
+  lcd.setCursor(0,1);</br>
+  cli();</br>
+  TCCR1A=0;</br>
+  TCCR1B=0;</br>
+  TCCR1B|=(1<<CS10); </br>
+  TIMSK1|=(1<<TOIE1);</br>
+  sei();</br>
+}</br>
+void loop()</br>{</br>
+}</br>
+
+ISR(TIMER1_OVF_vect)</br>{</br>
+   
+    actual=digitalRead(Entrada);</br>
+    if(anterior==(!actual))</br>{</br>
+                                cli();</br>
+                                TCCR1A=0;</br>
+                                TCCR1B=0;</br>
+                                OCR1A=2499;//Para 20ms</br>
+                            
+                                TCCR1B|=(1<<WGM12);</br>
+                                TCCR1B|=(1<<CS11);</br>
+                                TCCR1B|=(1<<CS10);</br>
+                                
+                                TIMSK1|=(1<<OCIE1A);</br>
+                                sei();</br>
+    
+    
+    }</br>
+    anterior=actual;</br>
+    
+}</br>
+
+ISR(TIMER1_COMPA_vect)</br>{</br>
+    if((parimpar%2)==1)</br>{</br>
+//     Serial.print("Valor de i:\n");</br>
+//     Serial.println(i);</br>
+     //bin=(digitalRead(Entrada));//Serial.println(digitalRead(Entrada));</br>
+     if(i>=0&i<16)</br>{</br>
+     dato1|=(digitalRead(Entrada)<<i);</br>}</br>
+     if(i>=16&i<=31)</br>{</br>
+     dato2|=(digitalRead(Entrada)<<(i-16));</br>
+     }</br>
+ 
+    
+     i++;</br>
+     }</br>
+      parimpar++;</br>
+    if(i==32)</br>{</br>
+          cli();</br>
+          Serial.print("Dato 1\n");</br>
+          Serial.println(dato1>>1,BIN);</br>
+          Serial.print("Dato 2\n");</br>
+          Serial.println(dato2<<1,BIN);</br>
+          total|=(dato1>>1);</br>
+          total|=((dato2<<1)<<14);</br>
+      
+         
+         
+          decodificado=x.decodificar(total);</br>
+          decodificado=decodificado;</br>
+          Serial.println(decodificado,BIN);</br>
+          
+          if(n!=1)</br>{</br>
+          lcd.setCursor(1,0);//posiciona cursor</br>
+          lcd.write("Temperatura: ");//muestra en la lcd</br>
+          lcd.setCursor(1,1);</br>
+          lcd.print(decodificado);</br>
+          delay(2000);</br>
+          n=1;</br>
+          }</br>
+          actual=1;anterior=1;i=0;</br>
+          parimpar=0;</br>
+          TCCR1A=0;</br>
+          TCCR1B=0;</br>
+          TCCR1B|=(1<<CS10); </br>
+          TIMSK1|=(1<<TOIE1);</br>
+          sei();</br>
+  
+    }</br>
+</br>
+}
+</br>
+<p><b>C&oacutedigo .h de la Codificaci&oacuten y Decodificaci&oacuten:</b></p>
+</br>
+#include "Arduino.h"</br>
+#include <stdint.h></br>
+</br>
+
+class comunicacion</br>
+{</br>
+public:</br>
+	uint32_t codificar(uint8_t mensaje);</br>
+        uint8_t decodificar(uint32_t mensajecod);</br>
+private:</br>
+
+	uint8_t est_act;</br>
+        int i;</br>
+        int j=31;</br>
+        uint32_t dem=0;</br>
+        uint32_t mcod=0;</br>
+        uint32_t mcodi=0;</br>
+        uint32_t datos;</br>
+public:</br>
+</br>
+	~comunicacion();</br>
+};</br>
+<h2 style="text-align:center">VIDEOS</h2>
+<p>Parte I</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_B2jpK2E_yQ" frameborder="0" allowfullscreen></iframe>
+<p>Parte II</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BsmWiF3Tg84" frameborder="0" allowfullscreen></iframe>
+<p>Parte III</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LRYBsPdMIn4" frameborder="0" allowfullscreen></iframe>
+
+<h2 style="text-align:center">REFERENCIAS</h2>
+<ul style="list-style-type:circle">
+  <li><p>http://www.bolanosdj.com.ar/SOBRELCD/TEORIALCDV1.pdf</p></li>
+  <li><p>http://sebalabs.blogspot.com.co/2015/09/arduino-09-conectar-pantalla-lcd-2x16.html</p></li>
+  <li><p>Dominic Welsh (1988): Codes and Cryptography, Clarendon Press, Oxford, ISBN 0-19-853287-3 (cody dec convolucional)</p></li>
+  <li><p>http://www.cesans.net/codigos/Codigos_Convolucionales-Carlos_Sanchez.pdf</p></li>
+  <li><p>https://es.wikipedia.org/wiki/Placa_de_pruebas</p></li>
+  <li><p>http://playground.arduino.cc/Interfacing/Processing</p></li>
+  <li><p>http://www.ti.com/lit/ds/symlink/lm35.pdf</p></li>
+  <li><p>https://es.wikipedia.org/wiki/Transmisi%C3%B3n_s%C3%ADncrona</p></li>
+  <li><p>https://es.wikipedia.org/wiki/Transmisi%C3%B3n_as%C3%ADncrona</p></li>
+</ul>
+</div>
+</body>
+</html>
