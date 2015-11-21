@@ -1,6 +1,3 @@
-Documentacion
-
-<!DOCTYPE html>
 <html>
 <head>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
@@ -14,8 +11,8 @@ div.inicio {
 } 
 </style>
 </head>
-<body background="fondo.jpg">
-<img src="uni.jpg" width="104" height="142">
+<body background="images/fondo.jpg">
+<img src="images/uni.jepg" width="104" height="142">
 </br>
 <div style="color:white;font-size:20px;">
 <script type="text/javascript">
@@ -92,7 +89,7 @@ actualmente se pueden encontrar desde distintos enfoques y definiciones. </p>
 <p align="justify">Arduino es una plataforma de hardware libre, basada en una placa con un microcontrolador y un entorno de desarrollo, dise&ntildeada para facilitar el uso de la electr&oacutenica en proyectos multidisciplinares.
 </br></br>
 El hardware consiste en una placa con un microcontrolador Atmel AVR y puertos de entrada/salida. Los microcontroladores m&aacutes usados son el Atmega168, Atmega328, Atmega1280, y Atmega8 por su sencillez y bajo coste que permiten el desarrollo de m&uacuteltiples dise&ntildeos. Por otro lado el software consiste en un entorno de desarrollo que implementa el lenguaje de programaci&oacuten Processing/Wiring y el cargador de arranque que es ejecutado en la placa. Se programa en el ordenador para que la placa controle los componentes electr&oacutenicos.</p>
-<div align="center"><img src="cod18.jpg"></div>
+<div align="center"><img src="images/cod18.jpg"></div>
 <h2>2. Processing</h2>
 <p align="justify">Es una herramienta de idioma / desarrollo de c&oacutedigo abierto para la escritura de programas en otros ordenadores. &uacutetil cuando se quiere esos otros ordenadores a "hablar" con un Arduino, por ejemplo para visualizar o guardar algunos datos recogidos por el Arduino.</p>
 <h2>3. C&oacutedigo Convolucional</h2>
@@ -114,7 +111,7 @@ Se pueden utilizar L registros cuyas salidas se suman de forma que se obtiene un
 del c&oacutedigo para cada entrada. Con la entrada de una nueva palabra a codificar las anteriores se
 desplazan al siguiente registro y se obtiene una nueva palabra codificada. </p>
 <p align="justify">En las transmisiones digitales actuales la codificaci&oacuten es un proceso muy elaborado, con un diagrama de bloques general que mostramos en la siguiente figura. </p>
-<div align="center"><img src="cod.jpg"></div>
+<div align="center"><img src="images/cod.jepg"></div>
 <p align="justify">Este sistema contiene dos codificadores propiamente dichos: uno exterior de bloques, y uno interior convolucional. Estos dos codificadores introducen redundancia en los datos con objeto de poder detectar o corregir errores de transmisi&oacuten. El sistema contiene adem&aacutes dos entrelazados cuyo objetivo es hacer que bloques correlativos de bits no se transmitan juntos. Este es el esquema de codificaci&oacuten empleado en la televisi&oacuten digital DVB (Digital Video Bradcasting). El esquema de codificaci&oacuten utilizado en la telefon&iacutea m&oacutevil GSM es similar, pues usa un codificador de bloques, un codificador convolucional y un entrelazado. 
 </br></br>Los c&oacutedigos convolucionales son adecuados para usar sobre canales con mucho ruido (alta probabilidad de error).
 </br></br>Los c&oacutedigos convolucionales son c&oacutedigos lineales, donde la suma de dos palabras de c&oacutedigo cualesquiera tambi&eacuten es una palabra de c&oacutedigo. Y al contrario que con los c&oacutedigos lineales, se prefieren los c&oacutedigos no sistem&aacuteticos.
@@ -125,14 +122,14 @@ desplazan al siguiente registro y se obtiene una nueva palabra codificada. </p>
 <p align="center"><b>m</b> es la memoria del c&oacutedigo o longitud restringida. </p>
 <p align="justify">La codificaci&oacuten convolucional es una codificaci&oacuten continua en la que la secuencia de bits codificada depende de los bits previos. El codificador consta de un registro de desplazamiento de K segmentos de longitud k (en total kK) que se desplaza k posiciones por ciclo y genera n funciones EXOR tambi&eacuten por ciclo. La tasa de codificaci&oacuten es, entonces, R=k/n. 
 </br></br>En el siguiente ejemplo mostramos un registro que se desplaza una posici&oacuten por ciclo (k=1), que consta de Kk=3 celdas y que genera N=3 funciones EXOR por ciclo. </p>
-<div align="center"><img src="cod1.jpg"></div>
+<div align="center"><img src="images/cod1.jepg"></div>
 <h2>3.1.1 Proceso de Codificaci&oacuten </h2>
 <p>Para este proceso se tendr&aacute en cuenta unos ejemplos, solo con el fin de dar a conocer la teor&iacutea del funcionamiento del codificador. </p>
 <p>El proceso de codificaci&oacuten de estos c&oacutedigos se realiza utilizando un dispositivo l&oacutegico en el codificador.</p>
-<p>Codificador convolucional (4,3,5). <div align="center"><img src="cod2.jpg"></div>
+<p>Codificador convolucional (4,3,5). <div align="center"><img src="images/cod2.jepg"></div>
 <p> La palabra codificada se obtendr&aacute como el resultado de realizar una serie de operaciones l&oacutegicas entre determinados bits que est&aacuten almacenados en los registros intermedios.</p>
 <p>Codificador convolucional (2,1,3)</p>
-<div align="center"><img src="cod3.jpg"></div>
+<div align="center"><img src="images/cod3.jepg"></div>
 <ul style="list-style-type:circle">
   <li><p>El conmutador con las dos entradas hace el papel de un registro de desplazamiento de dos estados.</p></li>
   <li><p>El c&oacutedigo convolucional es generado introduciendo un bit de datos y dando una revoluci&oacuten completa al conmutador. </p></li>
@@ -143,19 +140,19 @@ supongamos que se quiere enviar la secuencia de bits 0101 (donde los bits m&aacu
 <ul style="list-style-type:circle">
   <li><p>Se introduce el primer bit de la secuencia en el codificador: </p></li>
 </ul>
-<div align="center"><img src="cod4.jpg"></div>
+<div align="center"><img src="images/cod4.jepg"></div>
 <ul style="list-style-type:circle">
   <li><p>Se introduce el segundo bit de la secuencia en el codificador: </p></li>
 </ul>
-<div align="center"><img src="cod5.jpg"></div>
+<div align="center"><img src="images/cod5.jepg"></div>
 <ul style="list-style-type:circle">
   <li><p>Se introduce el tercer bit de la secuencia en el codificador:  </p></li>
 </ul>
-<div align="center"><img src="cod6.jpg"></div>
+<div align="center"><img src="images/cod6.jepg"></div>
 <ul style="list-style-type:circle">
   <li><p>Se introduce el cuarto bit de la secuencia en el codificador:   </p></li>
 </ul>
-<div align="center"><img src="cod7.jpg"></div>
+<div align="center"><img src="images/cod7.jepg"></div>
 <p align="justify"> Al final del proceso de codificaci&oacuten obtenemos que la secuencia codificada es 01 01 01 11.
 <p>Hay tres m&eacutetodos gr&aacuteficos:</p>
 <ul style="list-style-type:circle">
@@ -219,7 +216,7 @@ Dicha transmisi&oacuten se realiza con un ritmo que se genera centralizadamente 
   <li><p>Funciona con 4 V a 30 V.</p></li>
 </ul>
 <h2>5.2 Configuraci&oacuten de Pin</h2>
-<div align="center"><img src="cod8.jpg"></div>
+<div align="center"><img src="images/cod8.jpg"></div>
 <h2>6. LCD</h2>
 <p align="justify">Si bien muchas aplicaciones donde debemos mostrar informaci&oacuten podemos
 resolverlas con display de 7 segmentos, estos presentas algunas
@@ -232,7 +229,7 @@ facilidad que con que se pueden conectar a microprocesadores y
 microcontroladores, sumado a la &oacuteptima presentaci&oacuten de la
 informaci&oacuten. </p>
 <h2>6.1 Pines LCD 2x16</h2>
-<div align="center"><img src="cod9.jpg"></div>
+<div align="center"><img src="images/cod9.jepg"></div>
 <h2>6.2 Pines de alimentaci&oacuten</h2>
 <ul style="list-style-type:circle">
   <li><p><b>VSS: </b>Pin para conectar la pantalla LCD a tierra (GND). </p></li>
@@ -263,7 +260,7 @@ informaci&oacuten. </p>
   <li><p align="justify"><b>K: </b>pin de la luz del fondo de la pantalla (catodo), se conecta a GND.</p></li>
 </ul>
 <h2>6.7 Circuito Arduino - Pantalla LCD </h2>
-<div align="center"><img src="cod10.jpg"></div>
+<div align="center"><img src="images/cod10.jpg"></div>
 <p align="justify">Lo primero que deben conectar son los cables azul, rojo y morado que se ven en la imagen, finalmente conectan los cables de color naranjo y con eso esta lista para la programaci&oacuten.</p>
 <p align="justify">Primero debemos conectar los pines de alimentaci&oacuten de la pantalla LCD para probar si la pantalla enciende correctamente.</p>
 <ul style="list-style-type:circle">
@@ -272,28 +269,28 @@ informaci&oacuten. </p>
   <li><p>A    ---->5V</p></li>
   <li><p>K    ---->GND</p></li>
 </ul>
-<div align="center"><img src="cod11.jpg"></div>
-<div align="center"><img src="cod12.jpg"></div>
+<div align="center"><img src="images/cod11.jpg"></div>
+<div align="center"><img src="images/cod12.jpg"></div>
 <p align="justify">Ahora conectamos el circuito a los 5V del Arduino y tambi&eacuten el GND, si se enciende la pantalla entonces vamos bien.</p>
 <ul style="list-style-type:circle">
   <li><p>5V (Arduino)----->protoboard (+)</p></li>
   <li><p>GND (Arduino)-->protoboard  (-)</p></li>
 </ul>
-<div align="center"><img src="cod13.jpg"></div>
+<div align="center"><img src="images/cod13.jpg"></div>
 <p align="justify">Seguido de esto regulamos el contraste de la pantalla por medio de un potenci&oacutemetro, de forma pr&aacutectica se har&aacute con un trimer. </p>
 <ul style="list-style-type:circle">
   <li><p>Pin 1 potenciometro (izquierda) ---> 5V</p></li>
   <li><p>Pin 2 potenciometro (centro)    ---> V0 (Pantalla LCD)</p></li>
   <li><p>Pin 3 potenciometro (derecha)   ---> GND</p></li>
 </ul>
-<div align="center"><img src="cod14.jpg"></div>
+<div align="center"><img src="images/cod14.jpg"></div>
 <p>Ahora conectamos los pines:</p>
 <ul style="list-style-type:circle">
   <li><p>Pantalla LCD RS  --> Pin 7 Arduino</p></li>
   <li><p>Pantalla LCD RW--> GND</p></li>
   <li><p>Pantalla LCD E    --> Pin 8 Arduino</p></li>
 </ul>
-<div align="center"><img src="cod15.jpg"></div>
+<div align="center"><img src="images/cod15.jpg"></div>
 <p>Finalmente resta conectar los pines de informaci&oacuten D4, D5, D6 y D7</p>
 <ul style="list-style-type:circle">
   <li><p>D4-->Pin 9 Arduino</p></li>
@@ -301,10 +298,10 @@ informaci&oacuten. </p>
   <li><p>D6-->Pin 11 Arduino</p></li>
   <li><p>D7-->Pin 12 Arduino</p></li>
 </ul>
-<div align="center"><img src="cod16.jpg"></div>
+<div align="center"><img src="images/cod16.jpg"></div>
 <h2>7. Protoboard</h2>
 <p align="justify">Es un tablero con orificios que se encuentran conectados el&eacutectricamente entre s&iacute de manera interna, habitualmente siguiendo patrones de l&iacuteneas, en el cual se pueden insertar componentes electr&oacutenicos y cables para el armado y prototipado de circuitos electr&oacutenicos y sistemas similares. Est&aacute hecho de dos materiales, un aislante, generalmente un pl&aacutestico, y un conductor que conecta los diversos orificios entre s&iacute. Uno de sus usos principales es la creaci&oacuten y comprobaci&oacuten de prototipos de circuitos electr&oacutenicos antes de llegar a la impresi&oacuten mec&aacutenica del circuito en sistemas de producci&oacuten comercial.</p>
-<div align="center"><img src="cod17.jpg"></div>
+<div align="center"><img src="images/cod17.jpg"></div>
 <h2 style="text-align:center">MATERIALES</h2>
 <ul style="list-style-type:circle">
   <li><p>Arduino Mega</p></li>
@@ -315,14 +312,14 @@ informaci&oacuten. </p>
 </ul>
 <h2 style="text-align:center">MONTAJE</h2>
 <p>Diagrama del proyecto:</p>
-<div align="center"><img src="cod19.jpg"></div>
+<div align="center"><img src="images/cod19.jpg"></div>
 <p>Implementaci&oacuten de diagrama del proyecto:</p>
-<div align="center"><img src="cod20.jpg"></div>
+<div align="center"><img src="images/cod20.jepg"></div>
 <h2 style="text-align:center">PROCEDIMIENTO</h2>
 <p>Del siguiente esquema se obtiene el proceso para la codificaci&oacuten.</p>
-<div align="center"><img src="cod22.jpg"></div>
+<div align="center"><img src="images/cod22.jpg"></div>
 <p align="justify">De la gr&aacutefica anterior se realizar el proceso interno de la OR de donde se obtiene la codificaci&oacuten y la decodificaci&oacuten.</p>
-<div align="center"><img src="cod21.jpg"></div>
+<div align="center"><img src="images/cod21.jpg"></div>
 <h2 style="text-align:center">C&OacuteDIGOS</h2>
 <p><b>C&oacutedigo de Codificaci&oacuten y Decodificaci&oacuten mediante la Convoluci&oacuten:</b></p>
 </br>
@@ -647,11 +644,12 @@ public:</br>
 };</br>
 <h2 style="text-align:center">VIDEOS</h2>
 <p>Parte I</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_B2jpK2E_yQ" frameborder="0" allowfullscreen></iframe>
+
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/_B2jpK2E_yQ" frameborder="0" allowfullscreen></iframe></div>
 <p>Parte II</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BsmWiF3Tg84" frameborder="0" allowfullscreen></iframe>
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/BsmWiF3Tg84" frameborder="0" allowfullscreen></iframe></div>
 <p>Parte III</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LRYBsPdMIn4" frameborder="0" allowfullscreen></iframe>
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/LRYBsPdMIn4" frameborder="0" allowfullscreen></iframe></div>
 
 <h2 style="text-align:center">REFERENCIAS</h2>
 <ul style="list-style-type:circle">
@@ -668,4 +666,3 @@ public:</br>
 </div>
 </body>
 </html>
-
