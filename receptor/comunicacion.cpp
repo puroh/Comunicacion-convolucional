@@ -1,11 +1,9 @@
+#include "comunicacion.h"
 #include <stdint.h>
 
-uint8_t est_act;
-
-uint32_t codificar(uint8_t mensaje){
-
-        int i;
-        uint32_t mcod,mcodi=0;
+uint32_t comunicacion::codificar(uint8_t mensaje)
+{
+        
         est_act=0;
 
     for(i=7;i>=0;i--){
@@ -21,20 +19,22 @@ uint32_t codificar(uint8_t mensaje){
         est_act= est_act | ((((mensaje)&(1<<i))>>i)<<3);
 
         est_act=est_act>>1;
-
+        
+        //Serial.print("mensaje de 4 bits: ");
+        //Serial.println(mcod);
+        
         mcodi|= (mcod<<(4*i));
         }
 
         return mcodi;
 }
 
-uint8_t decodificar(uint32_t mensajecod){
-
-        int i;
+uint8_t  comunicacion::decodificar(uint32_t mensajecod)
+{
         uint8_t mess=0;
+        
         est_act=0;
-
-
+        
         for(i=7;i>=0;i--){
 
         if(est_act==0){
@@ -111,4 +111,9 @@ uint8_t decodificar(uint32_t mensajecod){
 
         return mess;
 
+}
+
+comunicacion::~comunicacion()
+{
+	//destructor por defecto
 }

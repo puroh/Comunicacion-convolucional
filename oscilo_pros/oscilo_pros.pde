@@ -1,3 +1,6 @@
+//Programa para implementar en el Processing
+
+
 import processing.serial.*;  // EMPIEZA CONEXION ARDUINO
 
 Serial puerto;          // 

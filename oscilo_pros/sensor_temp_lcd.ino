@@ -1,7 +1,6 @@
 /*
-  ReadAnalogVoltage
-  Reads an analog input on pin 0, converts it to voltage, and prints the result to the serial monitor.
-  Attach the center pin of a potentiometer to pin A0, and the outside pins to +5V and ground.
+  Lee una entrada analoga en el pin A0, esto lo representa en el valor de la temperatura 
+  y lo envia al monitor serial, ademas tambien en una pantalla LCD de 16 x 2
  
  This example code is in the public domain.
  
